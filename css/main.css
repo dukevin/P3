@@ -1,0 +1,64 @@
+body {
+  margin: 0 auto;
+  font-family: arial;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.hidden {
+  opacity: 0;
+}
+[class*="button"], #header div:not(#title) p {
+  cursor: pointer;
+}
+#header {
+  background-color: black;
+  height: 8vh;
+  color: white;
+  font-size: 14pt;
+}
+#header div {
+  display: block;
+  width: 33%;
+  float: left;
+}
+#header div:first-child {
+  text-align: left;
+}
+#header div:nth-child(2) {
+  text-align: center;
+}
+#header div:last-child {
+  text-align: right;
+}
+#head {
+  height: 40vh;
+}
+#logo {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  border: 20px double black;
+  text-align: center;
+  line-height: 12px;
+  position: relative;
+  transform: translate(0%,-50%);
+  top: 50%;
+}
+#logo p {
+  font-size: 32pt;
+}
+.main-button {
+  margin: 0 auto;
+  text-align: center;
+  border: 3px solid black;
+  width: 60%;
+  margin-top: 30px;
+  border-radius: 6px;
+}
+.main-button:hover {
+  background-color: black;
+  color: white;
+}

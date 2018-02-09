@@ -1,0 +1,56 @@
+#top {
+  height: 10vh;
+}
+#top .button {
+  border: 1px solid black;
+  width: 20%;
+  text-align: center;
+  float: left;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  margin: 30px;
+}
+#top .button.text {
+  border-radius: 10px;
+  color: white;
+  background-color: black;
+}
+#top .button.text:hover {
+  background-color: white;
+  color: black;
+}
+#top .button.symbol {
+  width: 10%;
+  border-radius: 20px;
+  float: right;
+}
+#top .button.symbol:hover {
+  color: white;
+  background-color: black;
+}
+#categories {
+  margin: 40px;
+  text-align: center;
+  border: 1px solid black;
+}
+.category {
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+.category:first-child {
+  background-color: black;
+  color: white;
+}
+.category:not(:first-child) {
+  cursor: pointer;
+}
+.category:not(:first-child):hover {
+  background-color: #aaa;
+}
+.category:not(:first-child):after {
+  content: ">";
+  float: right;
+  font-size: 20pt;
+  line-height: 20px;
+}

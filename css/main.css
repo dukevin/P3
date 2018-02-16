@@ -12,6 +12,86 @@ a {
 [class*="button"], #header div:not(#title) p {
   cursor: pointer;
 }
+#header div:not(#title) p {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#settings-list {
+  display: none;
+  position: absolute;
+  right: 0;
+  list-style-type: none;
+  background-color: gray;
+  z-index: 1;
+}
+#settings-list li {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid black;
+}
+#settings-list li:hover {
+  background-color: #aaa;
+  cursor: pointer;
+}
+#popup {
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  z-index: 2;
+  top: 30vh;
+  padding: 15px;
+  width: 70%;
+  left: 10%;
+  box-shadow: 5px 5px 15px gray;
+  display: none;
+}
+#popup #closeBtn {
+  float:right;
+  background-color: black;
+  display: block;
+  width: 20px;
+  height: 20px;
+  color:white;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#popup #closeBtn:hover {
+  background-color: darkred;
+}
+#popup input {
+  height: 20px;
+  width: 90%;
+  padding: 10px;
+  text-align: center;
+  font-size: 18pt;
+  margin-bottom: 20px;
+}
+#popup p {
+  text-align: center;
+}
+#popup .button {
+  position: relative;
+  bottom: 0;
+  float: left;
+  display: block;
+  width: 40%;
+  text-align: center;
+  border-left: 1px solid black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-left: 5%;
+  margin-right: 4%;
+  background-color: black;
+  color: white;
+}
+#popup .button:hover {
+  background-color: gray;
+  color: black;
+}
+#popup .button :first-child {
+}
 #header {
   background-color: black;
   height: 8vh;

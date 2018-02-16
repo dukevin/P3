@@ -53,7 +53,7 @@ $(document).ready(function () {
             window.location.href = "vocab.html";
         }
         if ($(this).hasClass("word_of_day")) {
-            window.location.href = "word_of_day.php";
+            window.location.href = "word.html";
         }
     })
 });

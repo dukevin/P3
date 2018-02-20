@@ -39,7 +39,7 @@
 <?php 
     function get_word_of_day()
     {
-        $words = json_decode("library/SAT.json", true);
+        $words = json_decode(file_get_contents("library/SAT.json", true));
         srand(date("dmy"));
         return array_rand($words);
     }

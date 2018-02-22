@@ -1,56 +1,81 @@
+#header {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
 #top {
   height: 10vh;
 }
 #top .button {
   border: 1px solid black;
-  width: 20%;
+  width: 25%;
   text-align: center;
-  float: left;
   display: block;
   height: 30px;
   line-height: 30px;
-  margin: 30px;
-}
-#top .button.text {
+  margin: 10px;
+  margin-right: 25px;
   border-radius: 10px;
   color: white;
   background-color: black;
+  float: right;
 }
 #top .button.text:hover {
   background-color: white;
   color: black;
 }
-#top .button.symbol {
-  width: 10%;
-  border-radius: 20px;
-  float: right;
-}
-#top .button.symbol:hover {
-  color: white;
-  background-color: black;
-}
 #categories {
-  margin: 40px;
+  margin: 0 auto;
   text-align: center;
-  border: 1px solid black;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
 }
-.category {
-  padding: 20px;
-  border-bottom: 1px solid black;
+
+#categories td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    text-align:center;
 }
-.category:first-child {
-  background-color: black;
-  color: white;
+#categories td:first-child {
+  width: 25%;
 }
-.category:not(:first-child) {
+#categories tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.icon {
+  font-size: 12pt;
   cursor: pointer;
+  filter: grayscale(100%);
+  writing-mode: initial;
+  text-orientation: initial;
+  position: initial;
+  top: initial;
+  right: initial;
+  float: initial;
 }
-.category:not(:first-child):hover {
-  background-color: #aaa;
+.icon:hover {
+  filter: grayscale(0%);
 }
-.category:not(:first-child):after {
-  content: ">";
-  float: right;
-  font-size: 20pt;
-  line-height: 20px;
+.icon span {
+  border: 1px solid white;
+  padding: 5px;
+  float: left;
+  border-right: 3px ridge white;
+  border-bottom: 5px ridge white;
+  margin-bottom: 10px;
+  transition: 0.5s all;
+  margin: 0 auto;
+}
+.icon span:hover {
+  border-right: 3px solid #ddd;
+  border-bottom: 5px ridge white;
+}
+#settings-list {
+  position: fixed !important;
+  right: 0;
+  top: 52px;
+  list-style-type: none;
+  background-color: gray;
+  z-index: 1;
 }

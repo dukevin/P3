@@ -1,6 +1,12 @@
+div {
+  transition: 0.5s all;
+}
 body {
   margin: 0 auto;
   font-family: arial;
+}
+h1 {
+  font-size: 32pt;
 }
 a {
   text-decoration: none;
@@ -26,12 +32,21 @@ a {
 }
 #settings-list li {
   padding: 20px;
-  text-align: center;
+  text-align: left;
   border-top: 1px solid black;
+  font-weight: bold;
+}
+#settings-list li:last-of-type {
+  text-align: center;
 }
 #settings-list li:hover {
   background-color: #aaa;
   cursor: pointer;
+}
+#settings-list .editable {
+  background-color: rgba(255,255,255,0.5);
+  text-decoration: underline;
+  padding: 4px;
 }
 #popup {
   position: absolute;
@@ -86,11 +101,12 @@ a {
   background-color: black;
   color: white;
 }
+.popBtn-container {
+  margin-top: 10px;
+}
 #popup .button:hover {
   background-color: gray;
   color: black;
-}
-#popup .button :first-child {
 }
 #header {
   background-color: black;
@@ -141,4 +157,47 @@ a {
 .main-button:hover {
   background-color: black;
   color: white;
+}
+#word_of_day {
+  width: 65%;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 6vh;
+}
+#word_of_day p {
+  text-align: left;
+}
+#word_of_day h1 {
+  text-align: center;
+}
+.icon {
+  font-size: 12pt;
+  cursor: pointer;
+  filter: grayscale(100%);
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  position: relative;
+  float: right;
+  top: 11vh;
+  right: 25px;
+}
+.icon:hover {
+  filter: grayscale(0%);
+}
+.icon span {
+  border: 1px solid gray;
+  padding: 10px;
+  border-right: 3px ridge gray;
+  border-bottom: 5px ridge gray;
+  margin-bottom: 10px;
+  transition: 0.5s all;
+}
+.icon span:hover {
+  border-right: 3px ridge white;
+  border-bottom: 5px ridge white;
+}
+canvas {
+  width: 100% !important;
+  height: 100px;
+  display: none;
 }

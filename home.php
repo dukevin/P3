@@ -79,7 +79,9 @@
 		</div>
 	</div>
 </body>
-
+<footer>
+	<a href="help.html">Help?</>
+</footer>
 </html>
 <?php 
     function get_word_of_day()

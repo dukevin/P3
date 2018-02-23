@@ -1,0 +1,60 @@
+#header {
+  position: initial;
+}
+.card {
+  margin-top: 22vh;
+  height: 25vh;
+  font-size: 24pt;
+  line-height: 12vh;
+}
+.flip {
+  background-color: #ccc;
+  height: 100%;
+  width: 30px;
+  position: relative;
+  top: 0;
+  right: 0;
+  float: right;
+  line-height: 24vh;
+  text-align: center;
+  cursor: pointer;
+}
+.flip:hover {
+  background-color: #aaa;
+}
+.head {
+  text-align: right;
+  padding-right: 10px;
+  background-color: gray;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.head label {
+  cursor: pointer;
+}
+#footer {
+  position: fixed;
+  width: 100%;
+  bottom: 10vh;
+  margin: 0 auto;
+}
+#footer-container {
+  width: 50%;
+  margin: 0 auto;
+}
+#footer .back, #footer .forward {
+  display: inline-block;
+  text-align: center;
+  background-color: lightgray;
+  padding: 8px 22px;
+  border-radius: 40px;
+  font-size: 22pt;
+  cursor: pointer;
+  margin: 0 auto;
+}
+#footer .forward {
+  float: right;
+}
+#footer .back:hover, #footer .forward:hover {
+  background-color: gray;
+}

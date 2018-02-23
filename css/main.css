@@ -222,3 +222,9 @@ input[type=number]::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance:textfield;
 }
+footer {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  color: gray;
+}

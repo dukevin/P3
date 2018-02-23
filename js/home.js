@@ -64,6 +64,9 @@ $(document).ready(function () {
     });
     $(".quiz").click(function () {
         location.href = "quiz.php";
-    })
+    });
+    $(".flashcards").click(function () {
+        location.href = "flashcards.php";
+    });
 });
 

@@ -30,10 +30,10 @@
 			<p>☰</p>
 		</div>
 	</div>
-	<div id="popup">
-		<div id="closeBtn">X</div>
-		<div id="popup-container">
-			<div id="popup-content">
+	<div class="popup">
+		<div class="closeBtn">X</div>
+		<div class="popup-container">
+			<div class="popup-content">
 				<p>Something something something</p>
 				<input type="text" placeholder="username" name="username" class="input1">
 				<input type="password" placeholder="password" name="password" class="input2">

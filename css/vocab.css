@@ -36,9 +36,7 @@
     border: 1px solid #dddddd;
     text-align: left;
     text-align:center;
-}
-#categories td:first-child {
-  width: 25%;
+    height: 45px !important;
 }
 #categories tr:nth-child(even) {
     background-color: #dddddd;
@@ -49,7 +47,7 @@
   filter: grayscale(100%);
   writing-mode: initial;
   text-orientation: initial;
-  position: initial;
+  position: block;
   top: initial;
   right: initial;
   float: initial;
@@ -60,7 +58,7 @@
 .icon span {
   border: 1px solid white;
   padding: 5px;
-  float: left;
+  /*! float: left; */
   border-right: 3px ridge white;
   border-bottom: 5px ridge white;
   margin-bottom: 10px;
@@ -78,4 +76,13 @@
   list-style-type: none;
   background-color: gray;
   z-index: 1;
+}
+#settings-list li{
+  background-color: gray;
+}
+#settings-list li:hover{
+  background-color: lightgray;
+}
+.popup {
+  position: fixed;
 }

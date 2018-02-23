@@ -48,7 +48,7 @@ a {
   text-decoration: underline;
   padding: 4px;
 }
-#popup {
+.popup {
   position: absolute;
   border: 1px solid black;
   border-radius: 10px;
@@ -61,7 +61,7 @@ a {
   box-shadow: 5px 5px 15px gray;
   display: none;
 }
-#popup #closeBtn {
+.popup .closeBtn {
   float:right;
   background-color: black;
   display: block;
@@ -72,10 +72,10 @@ a {
   border-radius: 10px;
   cursor: pointer;
 }
-#popup #closeBtn:hover {
+.popup .closeBtn:hover {
   background-color: darkred;
 }
-#popup input {
+.popup input {
   height: 20px;
   width: 90%;
   padding: 10px;
@@ -83,10 +83,10 @@ a {
   font-size: 18pt;
   margin-bottom: 20px;
 }
-#popup p {
+.popup p {
   text-align: center;
 }
-#popup .button {
+.popup .button {
   position: relative;
   bottom: 0;
   float: left;
@@ -104,7 +104,7 @@ a {
 .popBtn-container {
   margin-top: 10px;
 }
-#popup .button:hover {
+.popup .button:hover {
   background-color: gray;
   color: black;
 }
@@ -200,4 +200,25 @@ canvas {
   width: 100% !important;
   height: 100px;
   display: none;
+}
+#settings-list input {
+  outline: none;
+  width: 20px;
+  background: none;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  text-align: left;
+  text-decoration: underline;
+  font-size: 12pt;
+  font-weight: bold;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }

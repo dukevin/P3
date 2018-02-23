@@ -14,6 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="js/audio.js"></script>
 	<script src="js/home.js"></script>
 </head>
 
@@ -28,22 +29,22 @@
 			<p>Hello <?=$name?>!</p>
 		</div>
 		<div id="settings">
-			<p>☰</p>
+			<p>⚙</p>
 		</div>
 	</div>
 	<div id="settings-list">
 		<div class="settings-container">
 			<list>
-				<li>Notify new word of day: <span class="editable">12:00<span></li>
-				<li>Remind me every: <span class="editable">6 hr</span></li>
+				<li>Notify new word of day: <span class="editable"><input type="number" value=12></input>:<input type="number" value=00><span></li>
+				<li>Remind me every: <span class="editable"><input type="number" value="6"></input> hr</span></li>
 				<li id="logout-btn">Logout</li>
 			</list>
 		</div>
 	</div>
-	<div id="popup">
-		<div id="closeBtn">X</div>
-		<div id="popup-container">
-			<div id="popup-content">
+	<div class="popup">
+		<div class="closeBtn">X</div>
+		<div class="popup-container">
+			<div class="popup-content">
 				<p>Test your pronunciation</p>
 			</div>
 			<canvas id="visualizer" width=260></canvas>
@@ -70,11 +71,11 @@
 		<div class="main-button vocab">
 			<p>My Vocab</p>
 		</div>
-		<div class="main-button practice">
-			<p>Practice</p>
+		<div class="main-button flashcards">
+			<p>Flashcards</p>
 		</div>
-		<div class="main-button test">
-			<p>Test</p>
+		<div class="main-button quiz">
+			<p>Quiz</p>
 		</div>
 	</div>
 </body>

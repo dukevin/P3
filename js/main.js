@@ -23,8 +23,8 @@ var popcontent = {
     }
 }
 $(document).ready(function () {
-    $("#head, #closeBtn").click(function () {
-        $("#popup").fadeOut();
+    $("#head, .closeBtn").click(function () {
+        $(".popup").fadeOut();
         $("#settings-list").fadeOut();
     });
     $(".main-button1, .main-button2, .main-button3").on("click", function () {
@@ -37,7 +37,7 @@ $(document).ready(function () {
     });
     $("#button1, #button2").on("click", function () {
         if ($(this).find('p').text() == "Back")
-            $("#popup").fadeOut();
+            $(".popup").fadeOut();
         if ($(this).find('p').text() == "Forgot?")
             loadPopup("forgot");
         if ($(this).find('p').text() == "Login")
@@ -50,24 +50,24 @@ $(document).ready(function () {
 
 });
 function loadPopup(key) {
-    $("#popup").fadeIn();
-    $("#popup p").text(popcontent[key].title);
-    $("#popup #button1 p").text(popcontent[key].button1);
-    $("#popup #button2 p").text(popcontent[key].button2);
+    $(".popup").fadeIn();
+    $(".popup p").text(popcontent[key].title);
+    $(".popup #button1 p").text(popcontent[key].button1);
+    $(".popup #button2 p").text(popcontent[key].button2);
     for (i = 1; i <= 4; i++) {
         if (!popcontent[key].hasOwnProperty('field' + i))
-            $("#popup .input" + i).hide();
+            $(".popup .input" + i).hide();
         else {
-            $("#popup .input" + i).attr({ "name": popcontent[key]['field' + i], "placeholder": popcontent[key]['field' + i] });
-            $("#popup .input" + i).val('');
-            $("#popup .input" + i).show();
+            $(".popup .input" + i).attr({ "name": popcontent[key]['field' + i], "placeholder": popcontent[key]['field' + i] });
+            $(".popup .input" + i).val('');
+            $(".popup .input" + i).show();
         }
     }
 }
 function handleRegister() {
     vf = validateForm();
     if (vf != '') {
-        $("#popup-content p").html("<span style='color:red'>" + vf + "</span>");
+        $(".popup-content p").html("<span style='color:red'>" + vf + "</span>");
         return false;
     }
     $.ajax({
@@ -82,11 +82,11 @@ function handleRegister() {
         success: function (res) {
             msg = res.split(": ")[1];
             type = res.split(": ")[0];
-            $("#popup-content p").html("<span style='color:red'>" + msg + "</span>");
+            $(".popup-content p").html("<span style='color:red'>" + msg + "</span>");
             if (type == "Error")
                 return;
             if (type == "Ok") {
-                $("#popup").delay(2000).fadeOut();
+                $(".popup").delay(2000).fadeOut();
                 $("#title p").text("Please login");
                 $("#header").css("background-color", "dodgerblue");
             }
@@ -96,7 +96,7 @@ function handleRegister() {
 function handleLogin() {
     vf = validateForm();
     if (vf != '') {
-        $("#popup-content p").html("<span style='color:red'>" + vf + "</span>");
+        $(".popup-content p").html("<span style='color:red'>" + vf + "</span>");
         return false;
     }
     $.ajax({
@@ -110,11 +110,11 @@ function handleLogin() {
         success: function (res) {
             msg = res.split(": ")[1];
             type = res.split(": ")[0];
-            $("#popup-content p").html("<span style='color:red'>" + msg + "</span>");
+            $(".popup-content p").html("<span style='color:red'>" + msg + "</span>");
             if (type == "Error")
                 return;
             if (type == "Ok") {
-                $("#popup").fadeOut();
+                $(".popup").fadeOut();
                 $("#title p").text("Logged in!");
                 $("#header").css("background-color", "green");
                 setTimeout(function () {
@@ -126,7 +126,7 @@ function handleLogin() {
 }
 function handleForgot() {
     //Wizard of Oz.. should ask server for email and send it
-    $("#popup-content p").html("<span style='color:red'>" + "Check your email!" + "</span>");
+    $(".popup-content p").html("<span style='color:red'>" + "Check your email!" + "</span>");
 }
 function validateForm() {
     name = $("input[name='username']")[0].value;

@@ -2,7 +2,7 @@
 	session_start();
 	if(!isset($_SESSION['user'])) {
 		header("Location: index.php");
-		echo "Session Active";
+		exit("Session Lost");
 	}
 	$name = $_SESSION['user'];
 ?>
@@ -55,14 +55,17 @@
 	</div>
 	<div id="body">
         <div class="head"><label><input type="checkbox" checked name="speak"> Speak Words</label></div>
-		<div class="card">
-            <div class="flip">⮎</div>
-			<h2 class="word">Fathom</h2>
+		<div class="card-container">
+			<div class="card">
+				<div class="flip">⮎</div>
+				<figure id="word" class="front"></figure>
+    			<figure id="def" class="back"></figure>
+				</div>
 			</div>
 		</div>
         <div id="footer">
             <div id="footer-container">
-                <div class="back">&#8249;</div>
+                <div class="prev">&#8249;</div>
                 <div class="forward">&#8250;</div>
             </div>
         </div>

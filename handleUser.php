@@ -3,8 +3,8 @@ require_once("connect_users.php");
 
 $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-$name = $_POST["name"];
-$password = $_POST["password"];
+$name = isset($_POST["name"]) ? $_POST["name"] : "" ;
+$password = isset($_POST["password"]) ? $_POST["password"] : "";
 
 if($_POST["request"] == "register")
 {

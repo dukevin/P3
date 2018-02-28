@@ -2,9 +2,10 @@
 	session_start();
 	if(!isset($_SESSION['user'])) {
 		header("Location: index.php");
-		echo "Session Active";
+		exit("Session Lost");
 	}
 	$name = $_SESSION['user'];
+	$words = json_decode(file_get_contents("library/SAT=$name.json"), true);
 ?>
 <!doctype html>
 <html>
@@ -16,6 +17,8 @@
 	<link rel="stylesheet" type="text/css" href="css/quiz.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 	<script src="js/main.js"></script>
+	<script src="js/home.js"></script>
+	<script src="js/audio.js"></script>
 	<script src="js/quiz.js"></script>
 </head>
 
@@ -37,212 +40,76 @@
 		<div class="closeBtn">X</div>
 		<div class="popup-container">
 			<div class="popup-content">
-				<p>Something something something</p>
-				<input type="text" placeholder="username" name="username" class="input1">
-				<input type="password" placeholder="password" name="password" class="input2">
-				<input type="password" placeholder="repassword" name="repassword" class="input3">
-				<input type="text" placeholder="email" name="email" class="input4">
+				<p>Test your pronunciation</p>
 			</div>
-			<div class="button" id="button1">
-				<p>Button 1</p>
-			</div>
-			<div class="button" id="button2">
-				<p>Button 2</p>
+			<canvas id="visualizer" width=260></canvas>
+			<div class="popBtn-container">
+				<div class="button" id="cancel">
+					<p>Close</p>
+				</div>
+				<div class="button" id="start">
+					<p>Start</p>
+				</div>
 			</div>
 		</div>
 	</div>
 	<div id="body">
 	<div class="title">Last 7 day's words</div>
+	<?php
+		$times = 0;
+		while(++$times <= 7) {
+			$ans = mt_rand(1,3);
+			$word = get_word_by_seed_offset($times);
+	?>
 		<div class="card">
-			<h2 class="word">Fathom</h2>
-			<div class="definitions">
-				<div class="row">
-					<div class="radio disabled"></div>
-					<div class="pronounce radio-text">Test pronunciation</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						rash; uneventful
-					</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						Understand after much thought
-					</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						carnivorous animal living in the jungle
-					</div>
-				</div>
-			</div>
+			<h2 class="word"><?=$word?></h2>
+			<table class=<?=$word?>>
+			<tr>
+				<td colspan=2><div class="pronounce radio-text">Test pronunciation</div></td>
+				<td class="result result1"></td>
+			</tr>
+			<tr>
+				<td class="<?=$ans==1?"ans":"mis"?> tdrad"><div class="radio"></div></td>
+				<td class="<?=$ans==1?"ans":"mis"?>"><div class="radio-text"><?=$ans == 1 ? defineWord($word) : randomDef()?></div></td>
+				<td rowspan=3 class="result result2"></td>
+			</tr>
+			<tr>
+				<td class="<?=$ans==2?"ans":"mis"?> tdrad"><div class="radio"></div></td>
+				<td class="<?=$ans==2?"ans":"mis"?>"><div class="radio-text"><?=$ans == 2 ? defineWord($word) : randomDef()?></div></td>
+			</tr>
+			<tr>
+				<td class="<?=$ans==3?"ans":"mis"?> tdrad"><div class="radio"></div></td>
+				<td class="<?=$ans==3?"ans":"mis"?>"><div class="radio-text"><?=$ans == 3 ? defineWord($word) : randomDef()?></div></td>
+			</tr>
+			</table>
 		</div>
-		<div class="card">
-			<h2 class="word">Harbingers</h2>
-			<div class="definitions">
-				<div class="row">
-					<div class="radio disabled"></div>
-					<div class="pronounce radio-text">Test pronunciation</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						halt; to stop over
-					</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						indicators; bringers of warnings
-					</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						think intentively
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="card">
-			<h2 class="word">Abstain</h2>
-			<div class="definitions">
-				<div class="row">
-					<div class="radio disabled"></div>
-					<div class="pronounce radio-text">Test pronunciation</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						desist; go without; withdraw
-					</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						To gourge; consume in large quantities
-					</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						To exfoliate; rub smootly
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="card">
-			<h2 class="word">Lackluster</h2>
-			<div class="definitions">
-				<div class="row">
-					<div class="radio disabled"></div>
-					<div class="pronounce radio-text">Test pronunciation</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						To amaze; inspire and rally
-					</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						Produce loud noises
-					</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						dull; monotonous; bland
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="card">
-			<h2 class="word">Lampoon</h2>
-			<div class="definitions">
-				<div class="row">
-					<div class="radio disabled"></div>
-					<div class="pronounce radio-text">Test pronunciation</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						ridicule; spoof
-					</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						jump repeatedly
-					</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						happy; gay
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="card">
-			<h2 class="word">Resonant</h2>
-			<div class="definitions">
-				<div class="row">
-					<div class="radio disabled"></div>
-					<div class="pronounce radio-text">Test pronunciation</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						to consume food
-					</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						free falling
-					</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						echoing
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="card">
-			<h2 class="word">Acrophobia</h2>
-			<div class="definitions">
-				<div class="row">
-					<div class="radio disabled"></div>
-					<div class="pronounce radio-text">Test pronunciation</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						fear of heights
-					</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						a break; intermission
-					</div>
-				</div>
-				<div class="row">
-					<div class="radio"></div>
-					<div class="radio-text">
-						fear of spiders
-					</div>
-				</div>
-			</div>
-		</div>
+		<?php } ?>
 	</div>
 </body>
-
+<?php 
+    function get_word_by_seed_offset($offset = 0)
+    {
+		global $name, $words;
+        srand(((int)date("Ymd")-$offset)+ord($name[0])+ord($name[strlen($name)-1]));
+        $r = rand(0, sizeof($words["results"]));
+        return $words["results"][$r]["word"];
+	}
+	function randomDef()
+	{
+		global $words;
+		$wds = $words["results"];
+		return $wds[array_rand($wds)]["definition"];
+	}
+	function defineWord($word)
+	{
+		global $words;
+		$wds = $words["results"];
+		foreach($wds as $w)
+        {
+            if($w["word"] == $word) {
+                return $w["definition"];
+            }
+        }
+	}
+?>
 </html>

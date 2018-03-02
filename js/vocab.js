@@ -30,7 +30,7 @@ $(document).ready(function () {
         word = $(this).closest('td').prev('td').prev('td').text();
         curWord = word;
         if ($(this).hasClass("edit")) {
-            $(".popup.del .popup-content p").text("Edit word:");
+            $(".popup.modify .popup-content p").text("Edit word:");
             mode = "edit";
             $(".popup.modify").fadeIn();
             $("input.spelling").val(word);
@@ -44,10 +44,10 @@ $(document).ready(function () {
             });
         }
         if ($(this).hasClass("delete")) {
-            $(".popup.modify .popup-content p").text("Are you sure you want to delete this word?");
+            $(".popup.del .popup-content p").text("Are you sure you want to delete this word?");
             mode = "deleteOne";
             $(".popup.del").fadeIn();
-        }
+        } 
     });
     $("#submit_edit").click(function () {
         if (mode == "edit") {

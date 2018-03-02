@@ -22,6 +22,7 @@ var popcontent = {
         "button2": "Ok",
     }
 }
+var cur = '';
 $(document).ready(function () {
     $("#head, .closeBtn").click(function () {
         $(".popup").fadeOut();
@@ -47,13 +48,24 @@ $(document).ready(function () {
         if ($(this).find('p').text() == "Ok")
             handleForgot();
     });
-
+    $("input").keypress(function(e) {
+        if(e.which == 13) {
+            if(cur == "login")
+                handleLogin();
+            if(cur == "register")
+                handleRegister();
+        }
+    });
 });
 function loadPopup(key) {
     $(".popup").fadeIn();
     $(".popup p").text(popcontent[key].title);
     $(".popup #button1 p").text(popcontent[key].button1);
     $(".popup #button2 p").text(popcontent[key].button2);
+    if(key == "register")
+        cur = "register";
+    if(key == "login")
+        cur = "login";
     for (i = 1; i <= 4; i++) {
         if (!popcontent[key].hasOwnProperty('field' + i))
             $(".popup .input" + i).hide();

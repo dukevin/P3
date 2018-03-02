@@ -58,6 +58,12 @@ $(document).ready(function () {
             setTimeout(function () {
                 $(".popup-content p").html("<span style='color:green'>✔️&nbsp;Correct!</span>");
             }, 3500);
+            setTimeout(function () {
+                $(".popup").fadeOut();
+            }, 4500);
+            setTimeout(function () {
+                $(".popup-content p").text("Test your pronunciation");
+            }, 4600);
             $("#start p").text("Start");
             $("#start").css("background-color", "black");
         }

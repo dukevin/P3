@@ -20,6 +20,7 @@ $(document).ready(function () {
         }
     });
     $(".pronounce").click(function () {
+    	$(".popup-content p").text("Test your pronunciation");
         $(".popup").toggle();
         $("#start").attr('data', $(this).parent().parent().parent().parent().attr('class'));
     });

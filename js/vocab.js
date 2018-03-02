@@ -30,7 +30,7 @@ $(document).ready(function () {
         word = $(this).closest('td').prev('td').prev('td').text();
         curWord = word;
         if ($(this).hasClass("edit")) {
-            $(".popup.modify .popup-content p").text("Edit word:");
+            $(".popup.del .popup-content p").text("Edit word:");
             mode = "edit";
             $(".popup.modify").fadeIn();
             $("input.spelling").val(word);

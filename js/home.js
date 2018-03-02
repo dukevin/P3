@@ -63,7 +63,7 @@ $(document).ready(function () {
             }, 4500);
             setTimeout(function () {
                 $(".popup-content p").text("Test your pronunciation");
-            }, 4600);
+            }, 5600);
             $("#start p").text("Start");
             $("#start").css("background-color", "black");
         }

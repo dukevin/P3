@@ -18,6 +18,33 @@
     <script src="js/home.js"></script>
     <script src="js/audio.js"></script>
     <script src="js/vocab.js"></script>
+    <style>
+   	#top { display:none }
+	#categories { margin-top: 100px }
+#add_word {
+  width: 60px;
+  height: 60px;
+  color: black;
+  position: fixed;
+  bottom: 45px;
+  right: 45px;
+  z-index: 100;
+  background-color: black;
+  color: white;
+  border-radius: 100px;
+  font-size: 30pt;
+  text-align: center;
+  line-height: 60px;
+  box-shadow: 3px 3px 3px gray;
+  cursor: pointer;
+}
+#add_word:hover {
+  background-color: #444;
+}
+#add_word:active {
+  background-color: #666;
+}
+    </style>
 </head>
 
 <body>
@@ -104,8 +131,9 @@
     <?php $results = get_words(); ?>
 	<div id="body">
 		<div id="top">
-			<div class="button text" id="add_word">Add Word</div>
+			<div class="button text">Add Word</div>
 		</div>
+		<div id="add_word">+</div>
 		<table id="categories">
             <?php
                 foreach($results as $res)

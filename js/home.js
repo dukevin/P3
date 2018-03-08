@@ -29,7 +29,7 @@ $(document).ready(function () {
             if(name.slice(-1) == '1')
                 window.location.href = "vocab_B.php";
             else
-                window.location.href = "vocab.php";
+                window.location.href = "vocab.php";  
         }
     });
     $("#answer").click(function () {

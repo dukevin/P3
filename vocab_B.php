@@ -19,6 +19,12 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-114986182-1');
+    $(document).ready(function(){
+  	$("#add_word").click(function(){
+  		ga('create','UA-114986182-1','auto');
+        ga('send', 'event', 'addwordB', 'duration');
+  	});
+  });
 </script>
 
 	<meta charset="utf-8">

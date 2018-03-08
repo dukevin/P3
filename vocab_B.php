@@ -30,12 +30,22 @@
     <script src="js/audio.js"></script>
     <script src="js/vocab.js"></script>
 	<script>
+
 		$(document).ready(function(){
-		  	$("#add_word").click(function(){
-		  		ga('create','UA-114986182-1','auto');
-		        ga('send', 'event', 'addwordB', 'duration');
-		  	});
-		  });
+
+if (window.performance) {
+  // Gets the number of milliseconds since page load
+  // (and rounds the result since the value must be an integer).
+  var timeSincePageLoad = Math.round(performance.now());
+
+  // Sends the timing hit to Google Analytics.
+}
+	  	$("#add_word").click(function(){
+	  		ga('create','UA-114986182-1','auto');
+	        ga('send', 'click', 'addword', 'name', 'B', 'timetoclick', timeSincePageLoad);
+	  	});
+	  });
+
 	</script>
     <style>
    	#top { display:none }

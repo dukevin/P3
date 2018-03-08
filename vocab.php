@@ -12,8 +12,9 @@
 <head>
 
 <!-- Google Analytics Content Experiment code -->
+<!-- Google Analytics Content Experiment code -->
 <script>function utmx_section(){}function utmx(){}(function(){var
-k='170739637-0',d=document,l=d.location,c=d.cookie;
+k='170739637-2',d=document,l=d.location,c=d.cookie;
 if(l.search.indexOf('utm_expid='+k)>0)return;
 function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
 indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
@@ -25,6 +26,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
 </script><script>utmx('url','A/B');</script>
 <!-- End of Google Analytics Content Experiment code -->
+
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -49,11 +51,20 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
 	<script>
 	  $(document).ready(function(){
+
+if (window.performance) {
+  // Gets the number of milliseconds since page load
+  // (and rounds the result since the value must be an integer).
+  var timeSincePageLoad = Math.round(performance.now());
+
+  // Sends the timing hit to Google Analytics.
+}
 	  	$("#add_word").click(function(){
 	  		ga('create','UA-114986182-1','auto');
-	        ga('send', 'event', 'addwordA', 'duration');
+	        ga('send', 'click', 'addword', 'name', 'A', 'timetoclick', timeSincePageLoad);
 	  	});
 	  });
+
 	</script>
 
 </head>

@@ -19,12 +19,6 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-114986182-1');
-    $(document).ready(function(){
-  	$("#add_word").click(function(){
-  		ga('create','UA-114986182-1','auto');
-        ga('send', 'event', 'addwordB', 'duration');
-  	});
-  });
 </script>
 
 	<meta charset="utf-8">
@@ -35,7 +29,14 @@
     <script src="js/home.js"></script>
     <script src="js/audio.js"></script>
     <script src="js/vocab.js"></script>
-
+	<script>
+		$(document).ready(function(){
+		  	$("#add_word").click(function(){
+		  		ga('create','UA-114986182-1','auto');
+		        ga('send', 'event', 'addwordB', 'duration');
+		  	});
+		  });
+	</script>
     <style>
    	#top { display:none }
 	#categories { margin-top: 100px }

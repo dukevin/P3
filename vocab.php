@@ -35,12 +35,6 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
   gtag('js', new Date());
 
   gtag('config', 'UA-114986182-1');
-  $(document).ready(function(){
-  	$("#add_word").click(function(){
-  		ga('create','UA-114986182-1','auto');
-        ga('send', 'event', 'addwordA', 'duration');
-  	});
-  });
 </script>
 
 
@@ -53,6 +47,14 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     <script src="js/audio.js"></script>
     <script src="js/vocab.js"></script>
 
+	<script>
+	  $(document).ready(function(){
+	  	$("#add_word").click(function(){
+	  		ga('create','UA-114986182-1','auto');
+	        ga('send', 'event', 'addwordA', 'duration');
+	  	});
+	  });
+	</script>
 
 </head>
 

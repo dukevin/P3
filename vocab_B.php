@@ -10,6 +10,17 @@
 <html>
 
 <head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114986182-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114986182-1');
+</script>
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -18,6 +29,7 @@
     <script src="js/home.js"></script>
     <script src="js/audio.js"></script>
     <script src="js/vocab.js"></script>
+
     <style>
    	#top { display:none }
 	#categories { margin-top: 100px }
@@ -150,6 +162,7 @@
 		</table>
 
 	</div>
+	
 </body>
 
 </html>

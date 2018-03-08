@@ -1,3 +1,25 @@
+ $(document).ready(function() {
+    initializePage();
+});
+
+/*
+ * SASRI PUT CODE HERE.
+ */
+
+function clickLikeBtn(e) { 
+    // prevent the page from reloading      
+    e.preventDefault();
+    ga('create','UA-114986182-1','auto');
+    ga('send', 'event', 'addword', 'duration');
+    
+}
+
+function initializePage() {
+    $("#add_word").click(clickLikeBtn);
+};
+
+/* SASRI END */
+
 $(document).ready(function () {
     var curWord = '';
     var mode = "edit";
@@ -24,6 +46,8 @@ $(document).ready(function () {
             });
         }
     });
+
+   
 
     $(".edit, .delete").click(function () {
         $(".popup").hide();

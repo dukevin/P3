@@ -26,7 +26,10 @@ $(document).ready(function () {
     });
     $(".main-button").on("click", function () {
         if ($(this).hasClass("vocab")) {
-            window.location.href = "vocab.php";
+            if(name.slice(-1) == '1')
+                window.location.href = "vocab_B.php";
+            else
+                window.location.href = "vocab.php";
         }
     });
     $("#answer").click(function () {

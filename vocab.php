@@ -12,7 +12,6 @@
 <head>
 
 <!-- Google Analytics Content Experiment code -->
-<!-- Google Analytics Content Experiment code -->
 <script>function utmx_section(){}function utmx(){}(function(){var
 k='170739637-2',d=document,l=d.location,c=d.cookie;
 if(l.search.indexOf('utm_expid='+k)>0)return;
@@ -50,15 +49,14 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     <script src="js/vocab.js"></script>
 
 	<script>
-	  $(document).ready(function(){
+	  $(document).ready(function() {
+		if (window.performance) {
+		// Gets the number of milliseconds since page load
+		// (and rounds the result since the value must be an integer).
+		var timeSincePageLoad = Math.round(performance.now());
 
-if (window.performance) {
-  // Gets the number of milliseconds since page load
-  // (and rounds the result since the value must be an integer).
-  var timeSincePageLoad = Math.round(performance.now());
-
-  // Sends the timing hit to Google Analytics.
-}
+		// Sends the timing hit to Google Analytics.
+		}
 	  	$("#add_word").click(function(){
 	  		ga('create','UA-114986182-1','auto');
 	        ga('send', 'click', 'addword', 'name', 'A', 'timetoclick', timeSincePageLoad);
@@ -159,6 +157,7 @@ if (window.performance) {
             <?php
                 foreach($results as $res)
                 {
+					if(empty($res["word"])) continue;
             ?>
             <tr class="<?=trim($res["word"]);?>">
                 <td class="<?=trim($res["word"]);?>"><?=trim($res["word"]);?></td>

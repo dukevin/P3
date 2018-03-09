@@ -60,9 +60,10 @@
     if($method == "deleteAll")
     {
         $new = array();
-        $new["word"] = "";
-        $new["definition"] = "";
-        $new["type"] = "";
+        $nn["word"] = "";
+        $nn["definition"] = "";
+        $nn["type"] = "";
+        $new["results"] = array($nn);
         $jse = json_encode($new);
         file_put_contents("library/SAT=$name.json", $jse);
         die("Ok");

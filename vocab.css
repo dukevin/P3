@@ -1,0 +1,102 @@
+#header {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+}
+#top {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 45px;
+  background-color: gray;
+  z-index: 1;
+}
+#top .button {
+  border: 1px solid black;
+  text-align: center;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  margin: 10px;
+  margin-right: 5vh;
+  margin-top: 15px;
+  border-radius: 10px;
+  color: white;
+  background-color: black;
+  float: right;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+#top .button.text:hover {
+  background-color: white;
+  color: black;
+}
+#categories {
+  margin: 0 auto;
+  margin-top: 130px;
+  text-align: center;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+#categories td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    text-align:center;
+    height: 45px !important;
+}
+#categories tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.icon {
+  font-size: 12pt;
+  cursor: pointer;
+  filter: grayscale(100%);
+  writing-mode: initial;
+  text-orientation: initial;
+  position: block;
+  top: initial;
+  right: initial;
+  float: initial;
+}
+.icon:hover {
+  filter: grayscale(0%);
+}
+.icon span {
+  border: 1px solid white;
+  padding: 5px;
+  /*! float: left; */
+  border-right: 3px ridge white;
+  border-bottom: 5px ridge white;
+  margin-bottom: 10px;
+  transition: 0.5s all;
+  margin: 0 auto;
+}
+.icon span:hover {
+  border-right: 3px solid #ddd;
+  border-bottom: 5px ridge white;
+}
+#settings-list {
+  position: fixed !important;
+  right: 0;
+  top: 52px;
+  list-style-type: none;
+  background-color: gray;
+  z-index: 2;
+}
+#settings-list li{
+  background-color: gray;
+}
+#settings-list li:hover{
+  background-color: lightgray;
+}
+.popup {
+  position: fixed;
+}
+#categories th div {
+  transform: translate(10px, -10px) rotate(315deg);
+  float: left;
+  color: gray;
+}

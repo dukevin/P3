@@ -95,8 +95,13 @@
 .popup {
   position: fixed;
 }
-#categories th div{
+#categories th > div {
+  margin: auto !important;
+  width: 99%;
+  height: 10px;
+}
+#categories th div div{
   transform: translate(10px, -10px) rotate(315deg);
   float: left;
-  color: gray; 
+  color: gray;
 }

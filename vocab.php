@@ -154,7 +154,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 			<div class="button text" id="add_word">Add Word</div>
 		</div>
 		<table id="categories">
-		<th></th><th><div>Test</div><div>Hear</div><div>Define</div></th><th><div>Edit</div><div>Delete</div></th>
+		<th></th><th><div class="th-cont"><div>Say</div><div>Hear</div><div>Define</div></div></th><th><div class="th-cont"><div>Edit</div><div>Delete</div></div></th>
             <?php
                 foreach($results as $res)
                 {

@@ -131,7 +131,7 @@ function handleLogin() {
                 $("#header").css("background-color", "green");
                 setTimeout(function () {
                     window.location = "home.php";
-                }, 2000);
+                }, 1000);
             }
         }
     });

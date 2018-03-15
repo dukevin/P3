@@ -6,7 +6,7 @@
 }
 #top {
   width: 100%;
-  height: 50px;
+  height: 53px;
   position: fixed;
   top: 45px;
   background-color: gray;
@@ -19,8 +19,8 @@
   height: 30px;
   line-height: 30px;
   margin: 10px;
-  margin-right: 5vh;
-  margin-top: 15px;
+  margin-right: 4vh;
+  margin-top: 17px;
   border-radius: 10px;
   color: white;
   background-color: black;
@@ -95,7 +95,7 @@
 .popup {
   position: fixed;
 }
-#categories th div {
+#categories th div{
   transform: translate(10px, -10px) rotate(315deg);
   float: left;
   color: gray; 

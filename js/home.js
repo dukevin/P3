@@ -26,10 +26,7 @@ $(document).ready(function () {
     });
     $(".main-button").on("click", function () {
         if ($(this).hasClass("vocab")) {
-            if(name.slice(-1) == '1')
-                window.location.href = "vocab_B.php";
-            else
-                window.location.href = "vocab.php";  
+            window.location.href = "vocab.php";  
         }
     });
     $("#answer").click(function () {
@@ -54,6 +51,7 @@ $(document).ready(function () {
         }
         else if ($("#start p").text() == "Submit") {
             $("#visualizer").fadeOut();
+            $(".popBtn-container").slideUp();
             $(".popup-content p").html("<span style='color:orange'>Uploading...</span>");
             setTimeout(function () {
                 $(".popup-content p").html("<span style='color:gold'>Checking...</span>");
@@ -66,6 +64,7 @@ $(document).ready(function () {
             }, 4500);
             setTimeout(function () {
                 $(".popup-content p").text("Test your pronunciation");
+                $(".popBtn-container").show();
             }, 5600);
             $("#start p").text("Start");
             $("#start").css("background-color", "black");
